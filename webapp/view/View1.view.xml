@@ -1,0 +1,35 @@
+<mvc:View controllerName="Format.Formatter.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<f:SimpleForm>
+							<Table items="{Data>/Details}">
+								<columns>
+									<Column >
+										<Text text="Name"></Text>
+									</Column>
+									<Column>
+										<Text text="DOB"></Text>
+									</Column>
+									<Column>
+										<Text text="Field"></Text>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem vAlign="Middle">
+											<Text text ="{Data>Name}"></Text>
+											<Text text ="{path : 'Data>DOB' , formatter :'.View.onFormatting'}"></Text>
+											<Text text ="{Data>Field}"></Text>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</f:SimpleForm>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
